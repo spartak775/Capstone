@@ -1,0 +1,188 @@
+---
+title: "Capstone"
+author: "Spartak Harutyunyan"
+date: "4/25/2019"
+output: pdf_document
+---
+
+
+
+#Import Apts.csv
+
+```{r}
+
+Apts <- read.csv("Apts.csv")
+
+View(Apts)
+```
+
+
+#Histograms for all numeric Variables
+
+```{r}
+
+
+
+#Space
+ggplot(Apts, aes(x = Space)) + geom_histogram()
+
+
+#Rooms
+ggplot(Apts, aes(x = Rooms)) + geom_histogram(bins = 6)
+
+
+#Price
+ggplot(Apts, aes(x = Price)) + geom_histogram()
+
+
+#Height
+ggplot(Apts, aes(x = Height)) + geom_histogram(bins = 7)
+
+
+#CurrentFloor
+ggplot(Apts, aes(x = CurrentFloor)) + geom_histogram(bins = 20)
+
+
+#TotalFloors
+ggplot(Apts, aes(x = TotalFloors)) + geom_histogram(bins = 20)
+
+
+#Baths
+ggplot(Apts, aes(x = Baths)) + geom_histogram(stat = "count")
+
+```
+
+
+
+
+
+
+
+
+
+
+
+#Barplots for all Categorical Variables
+
+```{r}
+
+#BuildingType
+ggplot(Apts, aes(x = BuildingType)) + geom_bar()
+
+
+#Condition
+ggplot(Apts, aes(x = Condition)) + geom_bar()
+
+
+#Region
+ggplot(Apts, aes(x = Region)) + geom_bar()
+
+
+
+```
+
+
+
+
+
+
+
+#Scatterplots for all Numeric Variables with Price
+
+```{r}
+
+#Space
+ggplot(Apts, aes(x = Price, y = Space)) + geom_point()
+
+
+#Rooms
+ggplot(Apts, aes(x = Price, y = Rooms)) + geom_point()
+
+
+#Height
+ggplot(Apts, aes(x = Price, y = Height)) + geom_point()
+
+
+#CurrentFloor
+ggplot(Apts, aes(x = Price, y = CurrentFloor)) + geom_point()
+
+
+#TotalFloors
+ggplot(Apts, aes(x = Price, y = TotalFloors)) + geom_point()
+
+
+#Baths
+ggplot(Apts, aes(x = Price, y = Baths)) + geom_point()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Tests
+
+```{r}
+
+cor(Apts$Price , Apts$Space)
+
+linearMod <- lm(formula = Price ~ Space, data = Apts)
+
+summary(linearMod)
+```
+
+
+
+
+
+
+
+
+
+
+
