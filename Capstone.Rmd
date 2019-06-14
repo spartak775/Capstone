@@ -128,43 +128,6 @@ ggplot(Apts, aes(x = Price, y = Baths)) + geom_point()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #Tests
 
 ```{r}
